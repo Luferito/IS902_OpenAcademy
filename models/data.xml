@@ -1,0 +1,11 @@
+<odoo>
+	<record model="Course" id="1">
+		<field name="tittle">MM110</field>
+		<field name="description">Pre calculo</field>
+	</record>
+	<record model="Course" id="2">
+		<field name="tittle">MM111</field>
+		<field name="description">Geometria y trigonometria</field>
+	</record>
+
+</odoo>
