@@ -1,28 +1,28 @@
 <odoo>
     <data>
           <record id="object0" model="course.model">
-            <field name="tittle">MM110</field>
-            <field name="description">Pre calculo</field>
+            <field name="titulo">MM110</field>
+            <field name="descripcion">Pre calculo</field>
           </record>
 
           <record id="object1" model="course.model">
-            <field name="tittle">MM111</field>
-            <field name="description">Geometria y trigonometria</field>
+            <field name="titulo">MM111</field>
+            <field name="descripcion">Geometria y trigonometria</field>
           </record>
 
           <record id="object2" model="course.model">
-            <field name="tittle">FS100</field>
-            <field name="description">Fisica General 1</field>
+            <field name="titulo">FS100</field>
+            <field name="descripcion">Fisica General 1</field>
           </record>
 
           <record id="object3" model="course.model">
-            <field name="tittle">FS200</field>
-            <field name="description">Fisica General 2</field>
+            <field name="titulo">FS200</field>
+            <field name="descripcion">Fisica General 2</field>
           </record>
 
           <record id="object4" model="course.model">
-            <field name="tittle">IS902</field>
-            <field name="description">Industria del Software</field>
+            <field name="titulo">IS902</field>
+            <field name="descripcion">Industria del Software</field>
           </record>
 
     </data>
