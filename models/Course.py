@@ -7,5 +7,5 @@ class Course(models.Model):
 	_name = 'course.model'
 
 
-	tittle = fields.Char("Titulo", required=True)
-	description = fields.Text("Descripcion", required=True)
+	tittle = fields.Char(string="Titulo", required=True)
+	description = fields.Text(string="Descripcion", required=True)
