@@ -8,7 +8,78 @@
       <p class="o_view_nocontent_smiling_face">Crear el primer curso.</p>
     </field>
   </record>
-    
+
+<!-- Vista lista o tree-->
+<record model="ir.ui.view" id="view_cursos">
+  <field name="name">view.list</field>
+  <field name="model">course.model</field>
+  <field name="priority" eval="16"/>
+  <field name="arch" type="xml">
+  <!-- view content: <form>, <tree>, <graph>, ... -->
+
+    <tree string="Cursos">
+    <field name="name"/>
+    <field name="description"/>
+    </tree>
+
+  </field>
+</record>
+
+
+<!-- Vissta formulario-->
+<record model="ir.ui.view" id="view_form">
+  <field name="name">view.form</field>
+  <field name="model">course.model</field>
+  <field name="priority" eval="16"/>
+  <field name="arch" type="xml">
+  <!-- view content: <form>, <tree>, <graph>, ... -->
+
+  <form string="Nuevo Curso">
+    <group colspan="4">
+      <group colspan="2" col="2">
+        <separator string="Apartado 1" colspan="4"/>
+        <field name="name"/>
+        <field name="description"/>
+      </group>
+
+      <group colspan="2" col="2">
+        <separator string="Apartado 2" colspan="2"/>
+        <field name="name"/>
+        <field name="description" readonly="1"/>
+      </group>
+
+      <notebook colspan="4">
+        <page string="Descripción">
+         <field name="description" nolabel="1"/>
+        </page>
+          <page string="Notas Personales">
+         <field name="description"/>
+        </page>
+      </notebook>
+      
+    </group>
+  </form>
+
+  </field>
+</record>
+
+
+<!-- Vista search-->
+<record model="ir.ui.view" id="view_busqueda">
+  <field name="name">view.search</field>
+  <field name="model">course.model</field>
+  <field name="priority" eval="16"/>
+  <field name="arch" type="xml">
+  <!-- view content: <form>, <tree>, <graph>, ... -->
+
+<search>
+    <field name="name"/>
+    <field name="description"/>
+</search>
+
+  </field>
+</record>
+
 
   <menuitem id="menu_primario"  name="Cursos" sequence="1"/>
   <menuitem id="menu_superior" parent="menu_primario" name="Cursos" sequence="1"
