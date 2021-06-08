@@ -8,4 +8,4 @@ class Course(models.Model):
 	_description = "Cursos OpenAcademy"
 
 	name = fields.Char(string="Titulo", required=True)
-	description = fields.Text()
+	description = fields.Text(string="Descripción", required=True)
