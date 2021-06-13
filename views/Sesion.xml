@@ -19,13 +19,13 @@
   <field name="arch" type="xml">
   <!-- view content: <form>, <tree>, <graph>, ... -->
 
-    <tree string="Sesiones">
-    <field name="nombre"/>
-    <field name="fecha"/>
-    <field name="duracion"/>
-    <field name="asientos"/>
-    </tree>
-
+        <tree string="Sesiones">
+            <field name="nombre"/>
+            <field name="fecha"/>
+            <field name="duracion"/>
+            <field name="asientos"/>
+        </tree>
+    </field>
 </record>
 
 
@@ -46,6 +46,7 @@
         <field name="asientos"/>
       </group>
   </form>
+  </field>
 </record>
 
 
