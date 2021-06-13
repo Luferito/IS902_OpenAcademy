@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+<!-- Accion de la vista-->
+  <record model="ir.actions.act_window" id="action_list_sesion">
+    <field name="name">Sesiones</field>
+    <field name="res_model">sesion.model</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crear el primer curso.</p>
+    </field>
+  </record>
+
+<!-- Vista lista o tree-->
+<record model="ir.ui.view" id="view_sesiones">
+  <field name="name">view.list</field>
+  <field name="model">sesion.model</field>
+  <field name="priority" eval="16"/>
+  <field name="arch" type="xml">
+  <!-- view content: <form>, <tree>, <graph>, ... -->
+
+    <tree string="Sesiones">
+    <field name="nombre"/>
+    <field name="fecha"/>
+    <field name="duracion"/>
+    <field name="asientos"/>
+    </tree>
+
+</record>
+
+
+<!-- Vissta formulario-->
+<record model="ir.ui.view" id="view_form_sesiones">
+  <field name="name">view.form</field>
+  <field name="model">sesion.model</field>
+  <field name="priority" eval="16"/>
+  <field name="arch" type="xml">
+  <!-- view content: <form>, <tree>, <graph>, ... -->
+
+  <form string="Nueva Sesión">
+      <group colspan="2" col="2">
+        <separator string="Apartado 1" colspan="4"/>
+        <field name="nombre"/>
+        <field name="fecha"/>
+        <field name="duracion"/>
+        <field name="asientos"/>
+      </group>
+  </form>
+</record>
+
+
+<!-- Vista search-->
+<record model="ir.ui.view" id="view_busqueda_sesiones">
+  <field name="name">view.search</field>
+  <field name="model">sesion.model</field>
+  <field name="priority" eval="16"/>
+  <field name="arch" type="xml">
+  <!-- view content: <form>, <tree>, <graph>, ... -->
+
+<search>
+        <field name="nombre"/>
+        <field name="fecha"/>
+        <field name="duracion"/>
+        <field name="asientos"/>
+</search>
+
+  </field>
+</record>
+
+
+  <menuitem id="menu_superior_sesion" parent="menu_primario" name="Sesiones" sequence="2"
+action="action_list_sesion"/>
+
+  <menuitem id="menu_desplegable4" parent="menu_superior_sesion" name="Ver todo" sequence="1"
+action="action_list_sesion"/>
+  <menuitem id="menu_desplegable5" parent="menu_superior_sesion" name="Crear Sesión" sequence="2"
+action="action_list_sesion"/>
+
+
+</odoo>
