@@ -10,6 +10,8 @@ class Sesion(models.Model):
     fecha = fields.Date("Fecha de inicio", required=True)
     duracion = fields.Integer("Duración en minutos", required=True)
     asientos = fields.Integer("Cantidad de asientos", required=True)
-    instructor = fields.Many2one("res.partner", "Instructor", required=True)
+    instructor = fields.Many2one("res.partner", "Instructor", required=True, 
+        domain=['|', ('instructor', '=', True), ('category_id.name','ilike',"Teacher")])
     curso = fields.Many2one("course.model", "Curso", required=True)
-    asistentes = fields.Many2many("res.partner", string="Asistentes")
+    asistentes = fields.Many2many("res.partner", string="Asistentes",
+        domain=['|', ('instructor', '=', False), '&', ('category_id.name', 'not ilike', "Teacher"), ('instructor', '=', False)])
