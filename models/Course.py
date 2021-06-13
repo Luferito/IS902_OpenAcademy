@@ -9,3 +9,4 @@ class Course(models.Model):
 
 	name = fields.Char(string="Titulo", required=True)
 	description = fields.Text(string="Descripción", required=True)
+	responsable = fields.Many2one("res.users", "Usuario responsable", required=True)
