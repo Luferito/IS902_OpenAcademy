@@ -31,6 +31,8 @@
             <field name="fecha"/>
             <field name="duracion"/>
             <field name="asientos"/>
+            <field name="instructor"/>
+            <field name="curso"/>
         </tree>
     </field>
 </record>
@@ -51,6 +53,8 @@
         <field name="fecha"/>
         <field name="duracion"/>
         <field name="asientos"/>
+        <field name="instructor"/>
+        <field name="curso"/>
       </group>
   </form>
   </field>
@@ -70,6 +74,8 @@
         <field name="fecha"/>
         <field name="duracion"/>
         <field name="asientos"/>
+        <field name="instructor"/>
+        <field name="curso"/>
 </search>
 
   </field>

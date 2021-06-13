@@ -10,3 +10,5 @@ class Sesion(models.Model):
     fecha = fields.Date("Fecha de inicio", required=True)
     duracion = fields.Integer("Duración en minutos", required=True)
     asientos = fields.Integer("Cantidad de asientos", required=True)
+    instructor = fields.Many2one("res.partner", "Instructor", required=True)
+    curso = fields.Many2one("course.model", "Curso", required=True)
