@@ -12,3 +12,4 @@ class Sesion(models.Model):
     asientos = fields.Integer("Cantidad de asientos", required=True)
     instructor = fields.Many2one("res.partner", "Instructor", required=True)
     curso = fields.Many2one("course.model", "Curso", required=True)
+    asistentes = fields.Many2many("res.partner", string="Asistentes")

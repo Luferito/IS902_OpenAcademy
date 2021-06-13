@@ -49,23 +49,14 @@
         <field name="name"/>
         <field name="description"/>
         <field name="responsable"/>
-        <field name="sesiones"/>
-      </group>
-
-      <group colspan="2" col="2">
-        <separator string="Apartado 2" colspan="2"/>
-        <field name="name"/>
-        <field name="description" readonly="1"/>
-        <field name="responsable"/>
-        <field name="sesiones"/>
       </group>
 
       <notebook colspan="4">
         <page string="Descripción">
          <field name="description" nolabel="1"/>
         </page>
-          <page string="Notas Personales">
-         <field name="description"/>
+          <page string="Sesiones">
+         <field name="sesiones"/>
         </page>
       </notebook>
       
