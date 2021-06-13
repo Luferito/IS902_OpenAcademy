@@ -5,10 +5,17 @@
   <record model="ir.actions.act_window" id="action_list_sesion">
     <field name="name">Sesiones</field>
     <field name="res_model">sesion.model</field>
-    <field name="view_mode">tree,form</field>
+    <field name="view_mode">tree</field>
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face">Crear el primer curso.</p>
     </field>
+  </record>
+
+  <!-- Accion de la vista-->
+  <record model="ir.actions.act_window" id="action_list_sesion2">
+    <field name="name">Sesiones</field>
+    <field name="res_model">sesion.model</field>
+    <field name="view_mode">form</field>
   </record>
 
 <!-- Vista lista o tree-->
@@ -75,7 +82,7 @@ action="action_list_sesion"/>
   <menuitem id="menu_desplegable4" parent="menu_superior_sesion" name="Ver todo" sequence="1"
 action="action_list_sesion"/>
   <menuitem id="menu_desplegable5" parent="menu_superior_sesion" name="Crear Sesión" sequence="2"
-action="action_list_sesion"/>
+action="action_list_sesion2"/>
 
 
 </odoo>
