@@ -27,6 +27,7 @@
     <field name="name"/>
     <field name="description"/>
     <field name="responsable"/>
+    <field name="sesiones"/>
     </tree>
 
   </field>
@@ -48,6 +49,7 @@
         <field name="name"/>
         <field name="description"/>
         <field name="responsable"/>
+        <field name="sesiones"/>
       </group>
 
       <group colspan="2" col="2">
@@ -55,6 +57,7 @@
         <field name="name"/>
         <field name="description" readonly="1"/>
         <field name="responsable"/>
+        <field name="sesiones"/>
       </group>
 
       <notebook colspan="4">
@@ -85,6 +88,7 @@
     <field name="name"/>
     <field name="description"/>
     <field name="responsable"/>
+    <field name="sesiones"/>
 </search>
 
   </field>
