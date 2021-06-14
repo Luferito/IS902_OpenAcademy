@@ -7,7 +7,7 @@ class Sesion(models.Model):
     _description = "Sesiones OpenAcademy"
 
     nombre = fields.Char("Titulo",required=True)
-    fecha = fields.Date("Fecha de inicio", required=True)
+    fecha = fields.Date("Fecha de inicio", default=fields.Date.context_today, required=True)
     duracion = fields.Integer("Duración en minutos", required=True)
     asientos = fields.Integer("Cantidad de asientos", required=True)
     instructor = fields.Many2one("res.partner", "Instructor", required=True, 
@@ -16,8 +16,12 @@ class Sesion(models.Model):
     asistentes = fields.Many2many("res.partner", string="Asistentes",
         domain=['|', ('instructor', '=', False), '&', ('category_id.name', 'not ilike', "Teacher"), ('instructor', '=', False)])
     porcentaje_asientos_ocupados = fields.Float("Asientos ocupados", compute='_compute_asientos_ocupados', readonly=True)
+    active = fields.Boolean("Activa?", default=True)
 
     @api.depends('asistentes')
     def _compute_asientos_ocupados(self):
         for record in self:
-            record.porcentaje_asientos_ocupados = len(record.asistentes) / record.asientos * 100
+            if ((len(record.asistentes)> 0) and (record.asientos > 0)):
+                record.porcentaje_asientos_ocupados = len(record.asistentes) / record.asientos * 100
+            else:
+                record.porcentaje_asientos_ocupados = 0

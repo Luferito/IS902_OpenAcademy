@@ -35,6 +35,7 @@
             <field name="curso"/>
             <field name="asistentes"/>
             <field name="porcentaje_asientos_ocupados" widget="progressbar"/>
+            <field name="active"/>
 
         </tree>
     </field>
@@ -58,6 +59,7 @@
         <field name="asientos"/>
         <field name="instructor"/>
         <field name="curso"/>
+        <field name="active"/>
       </group>
        <notebook colspan="4">
         <page string="Asistentes">
