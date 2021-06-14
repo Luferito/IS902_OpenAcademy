@@ -15,3 +15,9 @@ class Sesion(models.Model):
     curso = fields.Many2one("course.model", "Curso", required=True)
     asistentes = fields.Many2many("res.partner", string="Asistentes",
         domain=['|', ('instructor', '=', False), '&', ('category_id.name', 'not ilike', "Teacher"), ('instructor', '=', False)])
+    porcentaje_asientos_ocupados = fields.Float("Asientos ocupados", compute='_compute_asientos_ocupados', readonly=True)
+
+    @api.depends('asistentes')
+    def _compute_asientos_ocupados(self):
+        for record in self:
+            record.porcentaje_asientos_ocupados = len(record.asistentes) / record.asientos * 100
