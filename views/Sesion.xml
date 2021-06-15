@@ -18,6 +18,13 @@
     <field name="view_mode">form</field>
   </record>
 
+    <!-- Accion de la vista-->
+  <record model="ir.actions.act_window" id="action_list_sesion_calendar">
+    <field name="name">Calendario de Sesiones</field>
+    <field name="res_model">sesion.model</field>
+    <field name="view_mode">calendar</field>
+  </record>
+
 <!-- Vista lista o tree-->
 <record model="ir.ui.view" id="view_sesiones">
   <field name="name">view.list</field>
@@ -26,7 +33,7 @@
   <field name="arch" type="xml">
   <!-- view content: <form>, <tree>, <graph>, ... -->
 
-        <tree string="Sesiones">
+        <tree string="Sesiones" decoration-primary="duracion &lt; 45" decoration-danger="duracion &gt; 45">
             <field name="nombre"/>
             <field name="fecha"/>
             <field name="duracion"/>
@@ -41,6 +48,20 @@
     </field>
 </record>
 
+<!--vista de calendario-->
+
+<record model="ir.ui.view" id="view_calendario">
+  <field name="name">view.calendar</field>
+  <field name="model">sesion.model</field>
+  <field name="priority" eval="16"/>
+  <field name="arch" type="xml">
+  <!-- view content: <form>, <tree>, <graph>, ... -->
+  <calendar string="Sesiones" date_start="fecha" color="curso">
+      <field name="nombre"/>
+  </calendar>
+
+    </field>
+</record>
 
 <!-- Vissta formulario-->
 <record model="ir.ui.view" id="view_form_sesiones">
@@ -101,6 +122,8 @@ action="action_list_sesion"/>
 action="action_list_sesion"/>
   <menuitem id="menu_desplegable5" parent="menu_superior_sesion" name="Crear Sesión" sequence="2"
 action="action_list_sesion2"/>
+<menuitem id="menu_desplegable6" parent="menu_superior_sesion" name="Calendario" sequence="3"
+action="action_list_sesion_calendar"/>
 
 
 </odoo>
