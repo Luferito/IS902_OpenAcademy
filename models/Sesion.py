@@ -18,6 +18,28 @@ class Sesion(models.Model):
     porcentaje_asientos_ocupados = fields.Float("Asientos ocupados", compute='_compute_asientos_ocupados', readonly=True)
     active = fields.Boolean("Activa?", default=True)
 
+    @api.onchange('asientos')
+    def _onchange_ad2(self):
+        if(self.asientos < 0):
+            return {
+                'warning': {
+                    'title': "Numero invalido",
+                    'message': "Numero de asientos invalido."
+                }
+            }
+
+    @api.onchange('asistentes')
+    def _onchange_ad(self):
+        if(len(self.asistentes) > self.asientos):
+            return {
+               'warning': {
+                    'title': "Limite superado",
+                    'message': "Se ha superado el numero de asientos disponibles.",
+                }
+            }
+
+
+
     @api.depends('asistentes')
     def _compute_asientos_ocupados(self):
         for record in self:
